@@ -1,0 +1,41 @@
+{
+  "name": "gulpTest",
+  "version": "1.0.0",
+  "description": "The best travel app in the world",
+  "dependencies": {
+    "express": "^4.10.2"
+  },
+  "devDependencies": {
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-css-globbing": "^0.1.8",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.3",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-util": "^3.0.6",
+    "node-sass": "^3.2.0",
+    "require-dir": "^0.3.0",
+    "through2": "^2.0.0",
+    "which": "^1.1.1"
+  },
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wanderlust-co/compathy2.git"
+  },
+  "keywords": [
+    "travel"
+  ],
+  "author": "magestican.visualkei@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wanderlust-co/compathy2/issues"
+  },
+  "homepage": "https://github.com/wanderlust-co/compathy2#readme"
+}
