@@ -2,7 +2,6 @@ console.time('Loading plugins');
 
 var gulp        = require('gulp');
 var compass     = require('gulp-compass');
-var concat      = require('gulp-concat');
 var sourcemaps  = require('gulp-sourcemaps');
 var plumber     = require('gulp-plumber');
 var rename      = require('gulp-rename');
@@ -16,9 +15,6 @@ var base = "src/";
 var paths = {
     sass      : base + 'sass/**/*.scss',
     images    : [ base + 'images/*' ],
-    concatCss: [
-      base + 'css/*.css',
-    ],
     publishDev: [
       base + 'build/main.css',
     ]
@@ -27,7 +23,6 @@ var paths = {
 var dest = {
     sass:       base + 'build/css',
     images:     path.join(__dirname, 'dist/'),
-    concatCss:  base + 'build/',
     publishDev: path.join(__dirname, 'dist/'),
 }
 
@@ -44,16 +39,10 @@ gulp.task('sass', function () {
     }
   }))
   .pipe(compass({
-    css:  base + 'css',
-    sass: base + 'sass',
+    css:   base + 'css',
+    sass:  base + 'sass',
+    debug: true
   }));
-});
-
-gulp.task('concatCss', ['sass'], function () {
-    return gulp.src(paths.concatCss)
-   .pipe(plumber())
-   .pipe(concat('main.css'))
-   .pipe(gulp.dest(dest.concatCss))
 });
 
 gulp.task('copyImages', function () {
@@ -75,7 +64,6 @@ gulp.task('clean', [], function() {
 
 gulp.task('build', [
   'clean',
-  'concatCss',
   'copyImages',
   ], function () {
     gulp.src(paths.publishDev)
