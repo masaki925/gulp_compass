@@ -17,7 +17,7 @@ var paths = {
     sass      : base + 'sass/**/*.scss',
     images    : [ base + 'images/*' ],
     concatCss: [
-      base + 'build/*.css',
+      base + 'css/*.css',
     ],
     publishDev: [
       base + 'build/main.css',
@@ -26,8 +26,9 @@ var paths = {
 
 var dest = {
     sass:       base + 'build/css',
-    images:     path.join(__dirname, '/..','public/images/'),
+    images:     path.join(__dirname, 'dist/'),
     concatCss:  base + 'build/',
+    publishDev: path.join(__dirname, 'dist/'),
 }
 
 gulp.task('default', [], function(){
@@ -64,6 +65,7 @@ gulp.task('copyImages', function () {
 gulp.task('clean', [], function() {
   del([
     'build/**/*',
+    'dist/**/*',
   ],{
     force: true
   });

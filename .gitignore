@@ -7,33 +7,9 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore configurations
-/config/database.yml
-/config/application.yml
-
-# Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
-
-# Ignore all logfiles and tempfiles.
-/log/*.log*
 /tmp
-
-# Ignore external libraries
 /vendor
-
-# Ignore static files builded by Grunt
-public/health.html
-public/assets
 !.gitkeep
-
-# Ignore static files builded by task
-/snapshots/*
-/snapshots_*
-snapshots
-
-# ignore becase it depends on architecture
-/bin/phantomjs
 
 *.rbc
 *.sassc
@@ -41,8 +17,6 @@ snapshots
 capybara-*.html
 .rspec
 .rvmrc
-/coverage/
-/spec/tmp/*
 **.orig
 rerun.txt
 pickle-email-*.html
@@ -56,10 +30,7 @@ pickle-email-*.html
 .swn
 .swm
 
-# Ignore node modules
 node_modules/*
-client/node_modules/*
-client/bower_components/*
-client/npm-debug.log
-client/app/build/*
+dist/*
+src/css/*
 
