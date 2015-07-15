@@ -33,5 +33,6 @@ pickle-email-*.html
 node_modules/*
 dist/*
 src/css/*
+src/compiled_css/*
 src/build/*
 

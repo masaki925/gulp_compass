@@ -17,6 +17,7 @@ var paths = {
     images    : [ base + 'images/*' ],
     publishDev: [
       base + 'css/**/*.css',
+      base + 'compiled_css/**/*.css',
     ]
 }
 
@@ -39,7 +40,7 @@ gulp.task('sass', function () {
     }
   }))
   .pipe(compass({
-    css:   base + 'css',
+    css:   base + 'compiled_css',
     sass:  base + 'sass',
     image: base + 'images',
     debug: true
@@ -57,6 +58,7 @@ gulp.task('clean', [], function() {
     'build/**/*',
     'dist/**/*',
     'src/css/**/*',
+    'src/compiled_css/**/*',
     'src/build/**/*',
   ],{
     force: true
