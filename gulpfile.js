@@ -44,8 +44,8 @@ gulp.task('sass', function () {
     }
   }))
   .pipe(compass({
-    css:         base + 'css',
-    sass:        base + 'sass',
+    css:  base + 'css',
+    sass: base + 'sass',
   }));
 });
 
@@ -66,6 +66,8 @@ gulp.task('clean', [], function() {
   del([
     'build/**/*',
     'dist/**/*',
+    'src/css/**/*',
+    'src/build/**/*',
   ],{
     force: true
   });
