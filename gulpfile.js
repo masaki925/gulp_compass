@@ -16,14 +16,14 @@ var paths = {
     sass      : base + 'sass/**/*.scss',
     images    : [ base + 'images/*' ],
     publishDev: [
-      base + 'build/main.css',
+      base + 'css/**/*.css',
     ]
 }
 
 var dest = {
     sass:       base + 'build/css',
-    images:     path.join(__dirname, 'dist/'),
-    publishDev: path.join(__dirname, 'dist/'),
+    images:     path.join(__dirname, 'dist/images/'),
+    publishDev: path.join(__dirname, 'dist/css/'),
 }
 
 gulp.task('default', [], function(){
@@ -41,6 +41,7 @@ gulp.task('sass', function () {
   .pipe(compass({
     css:   base + 'css',
     sass:  base + 'sass',
+    image: base + 'images',
     debug: true
   }));
 });
@@ -64,6 +65,7 @@ gulp.task('clean', [], function() {
 
 gulp.task('build', [
   'clean',
+  'sass',
   'copyImages',
   ], function () {
     gulp.src(paths.publishDev)
